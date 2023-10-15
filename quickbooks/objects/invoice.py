@@ -27,6 +27,7 @@ class Invoice(DeleteMixin, QuickbooksPdfDownloadable, QuickbooksManagedObject, Q
         "SalesTermRef": Ref,
         "ShipMethodRef": Ref,
         "DepositToAccountRef": Ref,
+        'ShipFromAddr': Address,
         "BillAddr": Address,
         "ShipAddr": Address,
         "TxnTaxDetail": TxnTaxDetail,
@@ -83,6 +84,7 @@ class Invoice(DeleteMixin, QuickbooksPdfDownloadable, QuickbooksManagedObject, Q
 
         self.EInvoiceStatus = None
 
+        self.ShipFromAddr = None
         self.BillAddr = None
         self.ShipAddr = None
         self.BillEmail = None

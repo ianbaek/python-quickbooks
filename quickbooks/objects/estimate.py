@@ -17,6 +17,7 @@ class Estimate(DeleteMixin,
     """
 
     class_dict = {
+        "ShipFromAddr": Address,
         "BillAddr": Address,
         "ShipAddr": Address,
         "CustomerRef": Ref,
@@ -63,6 +64,7 @@ class Estimate(DeleteMixin,
         self.AcceptedBy = None
         self.AcceptedDate = None
         self.GlobalTaxCalculation = "TaxExcluded"
+        self.ShipFromAddr = None
         self.BillAddr = None
         self.ShipAddr = None
         self.BillEmail = None

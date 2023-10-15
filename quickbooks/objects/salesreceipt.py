@@ -1,7 +1,7 @@
 from .base import Ref, CustomField, QuickbooksManagedObject, LinkedTxnMixin, Address, \
     EmailAddress, QuickbooksTransactionEntity, LinkedTxn
 from .tax import TxnTaxDetail
-from .detailline import DetailLine
+from .detailline import DetailLine, SalesItemLine, SubtotalLine, DiscountLine, GroupLine, DescriptionOnlyLine
 from ..mixins import QuickbooksPdfDownloadable, DeleteMixin
 
 
@@ -20,6 +20,7 @@ class SalesReceipt(DeleteMixin, QuickbooksPdfDownloadable, QuickbooksManagedObje
         "TxnTaxDetail": TxnTaxDetail,
         "DepositToAccountRef": Ref,
         "CustomerRef": Ref,
+        "ShipFromAddr": Address,
         "BillAddr": Address,
         "ShipAddr": Address,
         "ClassRef": Ref,
@@ -35,7 +36,11 @@ class SalesReceipt(DeleteMixin, QuickbooksPdfDownloadable, QuickbooksManagedObje
     }
 
     detail_dict = {
-
+        "SalesItemLineDetail": SalesItemLine,
+        "SubTotalLineDetail": SubtotalLine,
+        "DiscountLineDetail": DiscountLine,
+        "DescriptionOnly": DescriptionOnlyLine,
+        "GroupLineDetail": GroupLine
     }
 
     qbo_object_name = "SalesReceipt"
@@ -64,6 +69,7 @@ class SalesReceipt(DeleteMixin, QuickbooksPdfDownloadable, QuickbooksManagedObje
         self.CurrencyRef = None
         self.TxnTaxDetail = None
         self.DepositToAccountRef = None
+        self.ShipFromAddr = None
         self.BillAddr = None
         self.ShipAddr = None
         self.ShipMethodRef = None

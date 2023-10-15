@@ -10,11 +10,13 @@ from .billpayment import (
 )
 from .budget import BudgetDetail, Budget
 from .company_info import CompanyInfo
+from .companycurrency import CompanyCurrency
 from .creditcardpayment import (
     CreditChargeInfo, CreditChargeResponse, CreditCardPayment
 )
 from .creditmemo import CreditMemo
 from .customer import Customer
+from .customertype import CustomerType
 from .department import Department
 from .deposit import (
     CashBackInfo, DepositLineDetail, DepositLine, Deposit
